@@ -1,0 +1,23 @@
+{
+  "name": "perfcheck",
+  "version": "0.0.1",
+  "description": "Customizable performance check based on pagexray from sidespeed.io.",
+  "scripts": {},
+  "keywords": [],
+  "author": "Nicholas Almeida",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nalmeida/perfcheck"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
+    "filenamify": "^4.1.0",
+    "mz": "^2.7.0",
+    "ora": "^4.0.2",
+    "pagexray": "^2.5.9",
+    "prettyjson": "^1.2.1",
+    "puppeteer-har": "^1.1.1"
+  }
+}

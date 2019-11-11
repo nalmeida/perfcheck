@@ -1,0 +1,12 @@
+{
+	"domain": "https://github.com",
+	"authenticate": {
+		"username": null,
+		"password": null
+	},
+	"pages": [
+		{ "url": "/"},
+		{ "url": "/enterprise"},
+		{ "url": "/trending"}
+	]
+}
