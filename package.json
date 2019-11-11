@@ -18,6 +18,7 @@
     "ora": "^4.0.2",
     "pagexray": "^2.5.9",
     "prettyjson": "^1.2.1",
+    "puppeteer": "^2.0.0",
     "puppeteer-har": "^1.1.1"
   }
 }
