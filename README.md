@@ -200,7 +200,7 @@ Usage
 Options List
 
   -h, --help string          Print out helpful information.
-  -l, --loglevel number      Log level. Default 0
+  -l, --loglevel number      Log level. Default 2
                              0=Silent, 1=Important only, 2=All.
   -d, --domain string        Main domain to be tested. When set, it OVERRIDES the "domain" parameter from
                              the ./config/pages.json file.
@@ -234,14 +234,14 @@ Usage
 
   $ node xray --har ./path/to/your/harfile.har
 
-  $ node xray --loglevel 2 --har ./path/to/your/harfile.har
+  $ node xray --loglevel 1 --har ./path/to/your/harfile.har
 
 
 Options List
 
   -h, --help string       Print out helpful information.
   --har string            Path of your HAR file.
-  -l, --loglevel number   Log level. Default 0
+  -l, --loglevel number   Log level. Default 2
                           0=Silent, 1=Important only, 2=All.
 ```
 
@@ -280,14 +280,14 @@ Usage
 
   $ node perfcheck --harfolder ./har-files/2019.11.06-17.09.312/
 
-  $ node perfcheck --loglevel 2 --harfolder ./har-files/2019.11.06-17.09.312/
+  $ node perfcheck --loglevel 1 --harfolder ./har-files/2019.11.06-17.09.312/
 
 
 Options List
 
   -h, --help string        Print out helpful information.
   -f, --harfolder string   Path to the HAR folder used as the base for the performance check.
-  -l, --loglevel number    Log level. Default 0
+  -l, --loglevel number    Log level. Default 2
                            0=Silent, 1=Important only, 2=All.
 ```
 

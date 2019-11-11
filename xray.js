@@ -11,7 +11,8 @@ const init = function(commandLineObject) {
 		console.error('Error: Path to a HAR file is required.\nFor help run:\n\t$ node xray --help');
 		process.exit(1);
 	}
-	var logLevel = !isNaN(commandLineObject.loglevel) ? commandLineObject.loglevel : 0;
+
+	var logLevel = (commandLineObject.loglevel === undefined) ? 2 : commandLineObject.loglevel;
 
 	xray(har, logLevel);
 }
@@ -45,8 +46,8 @@ const sections = [
 				name: 'loglevel',
 				alias: 'l',
 				typeLabel: '{underline number}',
-				description: 'Log level. {italic Default 0}\n0=Silent, 1=Important only, 2=All.',
-				defaultOption: 0
+				description: 'Log level. {italic Default 2}\n0=Silent, 1=Important only, 2=All.',
+				defaultOption: 2
 			}
 		]
 	}

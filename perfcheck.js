@@ -11,7 +11,7 @@ const init = function(commandLineObject) {
 		console.error('Error: Path to the HAR folder is required.\nFor help run:\n\t$ node perfcheck --help');
 		process.exit(1);
 	}
-	var logLevel = !isNaN(commandLineObject.loglevel) ? commandLineObject.loglevel : 0;
+	var logLevel = (commandLineObject.loglevel === undefined) ? 2 : commandLineObject.loglevel;
 
 	// Your code
 
@@ -28,7 +28,7 @@ const sections = [
 		content: [
 			'$ node perfcheck <options>\n',
 			'$ node perfcheck --harfolder ./har-files/2019.11.06-17.09.312/\n',
-			'$ node perfcheck --loglevel 2 --harfolder ./har-files/2019.11.06-17.09.312/\n',
+			'$ node perfcheck --loglevel 1 --harfolder ./har-files/2019.11.06-17.09.312/\n',
 		]
 	},
 	{
@@ -48,8 +48,8 @@ const sections = [
 				name: 'loglevel',
 				alias: 'l',
 				typeLabel: '{underline number}',
-				description: 'Log level. {italic Default 0}\n0=Silent, 1=Important only, 2=All.',
-				defaultOption: 0
+				description: 'Log level. {italic Default 2}\n0=Silent, 1=Important only, 2=All.',
+				defaultOption: 2
 			}
 		]
 	}

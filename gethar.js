@@ -4,9 +4,6 @@ const commandLineUsage = require('command-line-usage');
 var gethar = require('./lib/gethar.js');
 
 const init = function(commandLineObject) {
-
-	var logLevel = !isNaN(commandLineObject.loglevel) ? commandLineObject.loglevel : 0;
-
 	gethar(commandLineObject);
 }
 
@@ -35,8 +32,8 @@ const sections = [
 				name: 'loglevel',
 				alias: 'l',
 				typeLabel: '{underline number}',
-				description: 'Log level. {italic Default 0}\n0=Silent, 1=Important only, 2=All.',
-				defaultOption: 0
+				description: 'Log level. {italic Default 2}\n0=Silent, 1=Important only, 2=All.',
+				defaultOption: 2
 			},
 			{
 				name: 'domain',
