@@ -64,7 +64,7 @@ Main configuration file.
   - `pages` <[string]> Path and file name of pages list. _Default_ __```./config/pages.json```__
   - `puppeteer` <[Object]> <[Puppeteer]> config object. _Default_:
   	- `launch` <[boolean]> Whether to use or not the headless mode. _Default_ __```true```__
-  	- `emulate` <[Array]> Array of objects following the Puppeteer [`DeviceDescriptors.js`](https://github.com/GoogleChrome/puppeteer/blob/master/DeviceDescriptors.js) standards. In order to test different resolutions emulating the same browser, just add the width in the `name` parameter. E.g.: `"name": "Chrome 1024"`.
+  	- `emulate` <[Array]> Array of objects following the Puppeteer [`DeviceDescriptors.js`](https://github.com/GoogleChrome/puppeteer/blob/master/lib/DeviceDescriptors.js) standards. In order to test different resolutions emulating the same browser, just add the width in the `name` parameter. E.g.: `"name": "Chrome 1024"`.
 
 #### Sample file:
 
