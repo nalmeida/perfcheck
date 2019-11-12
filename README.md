@@ -70,36 +70,36 @@ Main configuration file.
 
 ```
 {
-	"harFolder": "har-files",
-	"autoScroll": true,
-	"pages": "./config/pages.json",
-	"puppeteer": {
-		"launch": {
-			"headless": true
-		},
-		"emulate": [
-			{
-				"name": "Chrome 1280",
-				"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
-				"viewport": {
-					"width": 1280,
-					"height": 780
-				}
-			},
-			{
-				"name": "iPhone 6",
-				"userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
-				"viewport": {
-					"width": 375,
-					"height": 667,
-					"deviceScaleFactor": 1,
-					"isMobile": true,
-					"hasTouch": true,
-					"isLandscape": false
-				}
-			}
-		]
-	}
+  "harFolder": "har-files",
+  "autoScroll": true,
+  "pages": "./config/pages.json",
+  "puppeteer": {
+    "launch": {
+      "headless": true
+    },
+    "emulate": [
+      {
+        "name": "Chrome 1280",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+        "viewport": {
+          "width": 1280,
+          "height": 780
+        }
+      },
+      {
+        "name": "iPhone 6",
+        "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
+        "viewport": {
+          "width": 375,
+          "height": 667,
+          "deviceScaleFactor": 1,
+          "isMobile": true,
+          "hasTouch": true,
+          "isLandscape": false
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -128,22 +128,22 @@ Actions will follow the order:
 
 ```
 {
-	"domain": "http://www.yoursupercoolsite.com",
-	"authenticate": {
-		"username": null,
-		"password": null
-	},
-	"pages": [
-		{ "url": "/", "click": ["#mainbutton"]},
-		{ "url": "/?complex-selector", "click": [".menu-secondary > ul > li:nth-child(2) > .link"]},
-		{ "url": "/?3-buttons", "click": ["#firstbutton", ".secondbutton", "#send-form a"]},
-		{ "url": "/?click-and-wait", "click": ["#mainbutton"], "waitFor": 5000},
-		{ "url": "/contact"},
-		{ "url": "/products"},
-		{ "url": "/products/product-1"},
-		{ "url": "/products/product-2"},
-		{ "url": "/products/product-3"}
-	]
+  "domain": "http://www.yoursupercoolsite.com",
+  "authenticate": {
+    "username": null,
+    "password": null
+  },
+  "pages": [
+    { "url": "/", "click": ["#mainbutton"]},
+    { "url": "/?complex-selector", "click": [".menu-secondary > ul > li:nth-child(2) > .link"]},
+    { "url": "/?3-buttons", "click": ["#firstbutton", ".secondbutton", "#send-form a"]},
+    { "url": "/?click-and-wait", "click": ["#mainbutton"], "waitFor": 5000},
+    { "url": "/contact"},
+    { "url": "/products"},
+    { "url": "/products/product-1"},
+    { "url": "/products/product-2"},
+    { "url": "/products/product-3"}
+  ]
 }
 ```
 
@@ -154,11 +154,11 @@ Yor set of rules are in the `./rules` folder. You can config the set of rules in
 ### `./rules/rules.js`
 ```
 module.exports = [
-	require('../rules/statusOk.js'),
-	require('../rules/assetsStatusOk.js'),
-	require('../rules/lightImages.js'),
-	require('../rules/cdn.js'),
-	require('../rules/noAdminAjax.js'),
+  require('../rules/statusOk.js'),
+  require('../rules/assetsStatusOk.js'),
+  require('../rules/lightImages.js'),
+  require('../rules/cdn.js'),
+  require('../rules/noAdminAjax.js'),
 ];
 ```
 
@@ -289,6 +289,7 @@ Usage
   $ node perfcheck --harfolder ./har-files/2019.11.06-17.09.312/
 
   $ node perfcheck --loglevel 1 --harfolder ./har-files/2019.11.06-17.09.312/
+  --output ./report.csv
 
 
 Options List
@@ -297,6 +298,8 @@ Options List
   -f, --harfolder string   Path to the HAR folder used as the base for the performance check.
   -l, --loglevel number    Log level. Default 2
                            0=Silent, 1=Important only, 2=All.
+  -o, --output string      Path and file name of CSV output file.
+                           E.g.: ./report.csv
 ```
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array "Array"

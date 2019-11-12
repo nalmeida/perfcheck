@@ -7,15 +7,15 @@ const init = function(commandLineObject) {
 
 	// Required
 	var harfolder = commandLineObject.harfolder;
+	var csvFile = commandLineObject.output;
+
 	if(!harfolder) {
 		console.error('Error: Path to the HAR folder is required.\nFor help run:\n\t$ node perfcheck --help');
 		process.exit(1);
 	}
 	var logLevel = (commandLineObject.loglevel === undefined) ? 2 : commandLineObject.loglevel;
 
-	// Your code
-
-	perfcheck(harfolder, logLevel);
+	perfcheck(harfolder, logLevel, csvFile);
 }
 
 const sections = [
@@ -28,7 +28,7 @@ const sections = [
 		content: [
 			'$ node perfcheck <options>\n',
 			'$ node perfcheck --harfolder ./har-files/2019.11.06-17.09.312/\n',
-			'$ node perfcheck --loglevel 1 --harfolder ./har-files/2019.11.06-17.09.312/\n',
+			'$ node perfcheck --loglevel 1 --harfolder ./har-files/2019.11.06-17.09.312/ --output ./report.csv\n',
 		]
 	},
 	{
@@ -50,6 +50,12 @@ const sections = [
 				typeLabel: '{underline number}',
 				description: 'Log level. {italic Default 2}\n0=Silent, 1=Important only, 2=All.',
 				defaultOption: 2
+			},
+			{
+				name: 'output',
+				alias: 'o',
+				typeLabel: '{underline string}',
+				description: 'Path and file name of CSV output file.\nE.g.: {italic ./report.csv}'
 			}
 		]
 	}
@@ -61,6 +67,7 @@ const optionDefinitions = [
 	{ name: 'help', alias: 'h' },
 	{ name: 'loglevel', alias: 'l', type: Number },
 	{ name: 'harfolder', alias: 'f', type: String},
+	{ name: 'output', alias: 'o', type: String},
 ]
 const options = commandLineArgs(optionDefinitions);
 
