@@ -43,6 +43,14 @@ Clone this repository and run:
 $ npm install
 ```
 
+# TL;DR;
+
+
+```
+$ node gethar
+$ node perfcheck ./har-files/YOUR-HAR-FOLDER
+```
+
 # Config
 
 ## `./config/config.json`
