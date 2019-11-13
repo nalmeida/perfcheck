@@ -51,6 +51,9 @@ $ node gethar
 $ node perfcheck ./har-files/YOUR-HAR-FOLDER
 ```
 
+<img src="https://raw.githubusercontent.com/nalmeida/perfcheck-extras/master/tldr-min.gif" align="center">
+
+
 # Config
 
 ## `./config/config.json`
