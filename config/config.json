@@ -1,5 +1,5 @@
 {
-	"harFolder": "har-files",
+	"harFolder": "./har-files",
 	"autoScroll": true,
 	"pages": "./config/pages.json",
 	"puppeteer": {
