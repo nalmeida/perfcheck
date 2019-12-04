@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 
-var xray = require('./lib/xray.js');
+var xray = require('../lib/xray.js');
 
 const init = function(commandLineObject) {
 

@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 
-var gethar = require('./lib/gethar.js');
+var gethar = require('../lib/gethar');
 
 const init = function(commandLineObject) {
 	gethar(commandLineObject);
@@ -17,7 +19,7 @@ const sections = [
 		content: [
 			'$ node gethar <options>\n',
 			'$ node gethar {italic --help}\n',
-			'$ node gethar {italic --loglevel 1} {italic --headless false} {italic --pages anotherfile.json} {italic --domain http://www.myanotherdomain.com} {italic --auth myuser:MyP4ssw0rd}\n',
+			'$ node gethar {italic --config ./config/config.json} {italic --loglevel 1} {italic --headless false} {italic --pages anotherfile.json} {italic --domain http://www.myanotherdomain.com} {italic --auth myuser:MyP4ssw0rd}\n',
 		]
 	},
 	{
@@ -27,6 +29,13 @@ const sections = [
 				name: 'help',
 				alias: 'h',
 				description: 'Print out helpful information.'
+			},
+			{
+				name: 'config',
+				alias: 'c',
+				typeLabel: '{underline string}',
+				description: 'Path to config file. {italic Default \'./config/config.json\'}',
+				defaultOption: './config/config.json'
 			},
 			{
 				name: 'loglevel',
@@ -68,6 +77,7 @@ const optionDefinitions = [
 	{ name: 'help', alias: 'h' },
 	{ name: 'loglevel', alias: 'l', type: Number },
 
+	{ name: 'config', alias: 'c', type: String},
 	{ name: 'domain', alias: 'd', type: String},
 	{ name: 'auth', alias: 'a', type: String},
 	{ name: 'headless', alias: 'e', type: String},

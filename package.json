@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "Customizable performance check based on pagexray from sidespeed.io.",
   "scripts": {},
+  "main": {},
+  "bin": {
+    "xray": "bin/xray.js",
+    "gethar": "bin/gethar.js",
+    "perfcheck": "bin/perfcheck.js"
+  },
   "keywords": [],
   "author": "Nicholas Almeida",
   "repository": {

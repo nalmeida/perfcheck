@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 
-var perfcheck = require('./lib/perfcheck.js');
+var perfcheck = require('../lib/perfcheck.js');
 
 const init = function(commandLineObject) {
 
